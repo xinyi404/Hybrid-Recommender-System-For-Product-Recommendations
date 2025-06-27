@@ -1,0 +1,156 @@
+/* 1. Increase the HTML root so rem units grow proportionally */
+:root {
+    font-size: 20px;  /* was 16px by default; now all rem-based sizes up by ~12.5% */
+  }
+  
+  /* 2. Bump up body / container text */
+  body,
+  .main .block-container,
+  .stSidebar .block-container {
+    font-size: 1rem !important;      /* now 18px text by default */
+    line-height: 1.6 !important;
+  }
+  
+  /* 3. Headers and titles */
+  .main-title {
+    font-size: 2.25 rem !important;      /* from 3rem → ~72px */
+  }
+  h1, .stMarkdown h1 {
+    font-size: 2rem !important;    /* ~45px */
+  }
+  h2, .stMarkdown h2 {
+    font-size: 1.75rem !important;      /* ~36px */
+  }
+  h3, .stMarkdown h3 {
+    font-size: 1.5 rem !important;    /* ~31px */
+  }
+  
+  /* 4. Metric cards (values + labels) */
+  [data-testid="stMetricValue"] {
+    font-size: 2 rem !important;    /* larger metric number */
+  }
+  [data-testid="stMetricLabel"] {
+    font-size: 1.5rem !important;  /* ~20px labels */
+  }
+  
+  /* 5. DataFrame/table text */
+  .stDataFrame td, 
+  .stDataFrame th {
+    font-size: 1.125rem !important;      /* ~18px table text */
+  }
+  
+/* Buttons */
+.stbutton,
+.stButton > button,
+.nav-button,
+.home-button {
+  background-color: #2c2c2c !important;
+  color: #e0e0e0 !important;
+  border: none !important;
+  border-radius: 100px !important;
+  padding: 10px 30px !important;
+  font-size: 22px !important;
+  cursor: pointer !important;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 2px 4px, rgba(0, 0, 0, 0.7) 0 4px 8px !important;
+  transition: background-color 200ms ease, transform 200ms ease, box-shadow 200ms ease !important;
+}
+
+.stbutton:hover,
+.stButton > button:hover,
+.nav-button:hover,
+.home-button:hover {
+  background-color: #3a3a3a !important;
+  transform: translateY(-2px) !important;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 4px 6px !important;
+}
+
+/* Main Title */
+.main-title {
+  background-color: #1f1f1f !important;
+  color: #fafafa !important;
+  border-bottom: 3px solid #444 !important;
+  padding: 20px 0 !important;
+  text-align: center !important;
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  margin: 0.5em 0 !important;
+  transition: background-color 200ms ease, color 200ms ease !important;
+}
+
+/* Tabs */
+div[data-testid="stTabs"] button[role="tab"] {
+  background-color: #2c2c2c !important;
+  color: #b0b0b0 !important;
+  border-radius: 8px 8px 0 0 !important;
+  margin: 0 4px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  transition: background-color 200ms ease, color 200ms ease !important;
+}
+
+div[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+  background-color: #3a3a3a !important;
+  color: #e0e0e0 !important;
+  border-bottom: 3px solid #555 !important;
+}
+
+div[data-testid="stTabs"] button[role="tab"]:hover {
+  background-color: #4a4a4a !important;
+  color: #fafafa !important;
+}
+
+/* Horizontal Rule */
+hr {
+  border-top: 1px solid #444 !important;
+}
+
+/* Metric & Sidebar Containers */
+[data-testid="metric-container"],
+.stSidebar .css-1d391kg {
+  background-color: #1f1f1f !important;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  transition: background-color 200ms ease !important;
+}
+
+/* DataFrame Header */
+.stDataFrame thead th {
+  background-color: #2c2c2c !important;
+  color: #e0e0e0 !important;
+}
+
+/* Chart Containers */
+.stAltairChart > div,
+.echarts-for-react {
+  background-color: #1f1f1f !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+  transition: background-color 200ms ease !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1f1f1f;     
+    color: #e0e0e0;                 
+    text-align: center;
+    padding: 8px 0;
+    font-size: 1rem;
+    z-index: 1000;
+}
+  /* push content up so footer never overlaps main content */
+.main > .block-container {
+    padding-bottom: 60px;
+}
